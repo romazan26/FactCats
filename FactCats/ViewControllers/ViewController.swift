@@ -9,8 +9,9 @@ import UIKit
 
 final class ViewController: UIViewController {
 
-    let link: URL = URL(string: "https://catfact.ninja/fact")!
-
+   private let link: URL = URL(string: "https://catfact.ninja/fact")!
+    
+// MARK: - IBAction
     @IBAction func getFact() {
         fetchFact()
     }
