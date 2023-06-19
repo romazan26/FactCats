@@ -22,6 +22,7 @@ enum Link {
 
 final class ViewController: UIViewController {
     @IBOutlet var imageCat: UIImageView!
+    @IBOutlet var labelFact: UILabel!
     
     
 // MARK: - IBAction
@@ -44,7 +45,9 @@ extension ViewController {
             do {
                 let decoder = JSONDecoder()
                 let fact = try decoder.decode(FactCat.self, from: data)
-                print(fact)
+                DispatchQueue.main.async {
+                    self.labelFact.text = fact.fact
+                }
             } catch {
                 print(error.localizedDescription)
             }

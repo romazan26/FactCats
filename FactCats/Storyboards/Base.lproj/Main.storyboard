@@ -30,24 +30,34 @@
                                     <constraint firstAttribute="width" secondItem="Jwz-2b-KJH" secondAttribute="height" multiplier="333:227" id="q5B-B3-qur"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlJ-tb-HIS">
+                                <rect key="frame" x="30" y="346" width="333" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jwz-2b-KJH" secondAttribute="trailing" constant="30" id="4n3-Cy-yh4"/>
+                            <constraint firstItem="LlJ-tb-HIS" firstAttribute="top" secondItem="Jwz-2b-KJH" secondAttribute="bottom" constant="20" id="FJR-aJ-hXz"/>
                             <constraint firstItem="uFg-Bz-M4Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OEd-vu-dWq"/>
                             <constraint firstItem="Jwz-2b-KJH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bNQ-Z2-sC1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LlJ-tb-HIS" secondAttribute="trailing" constant="30" id="dDi-PY-2JY"/>
+                            <constraint firstItem="LlJ-tb-HIS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fKF-e1-avA"/>
                             <constraint firstItem="Jwz-2b-KJH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="lwd-io-nPB"/>
                             <constraint firstItem="uFg-Bz-M4Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wIH-aB-dg7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageCat" destination="Jwz-2b-KJH" id="kCX-wc-zhE"/>
+                        <outlet property="labelFact" destination="LlJ-tb-HIS" id="ifh-jz-nse"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
