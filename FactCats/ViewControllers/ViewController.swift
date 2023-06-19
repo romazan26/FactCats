@@ -7,13 +7,27 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+enum Link {
+    case factUrl
+    case pictureUrl
+    var url: URL{
+        switch self{
+        case .factUrl:
+            return URL(string: "https://catfact.ninja/fact")!
+        case .pictureUrl:
+            return URL(string: "https://cataas.com/cat")!
+        }
+    }
+}
 
-   private let link: URL = URL(string: "https://catfact.ninja/fact")!
+final class ViewController: UIViewController {
+    @IBOutlet var imageCat: UIImageView!
+    
     
 // MARK: - IBAction
     @IBAction func getFact() {
         fetchFact()
+        fetchImage()
     }
 
 }
@@ -21,7 +35,7 @@ final class ViewController: UIViewController {
 // MARK: - Networking
 extension ViewController {
     private func fetchFact() {
-        URLSession.shared.dataTask(with: link) {  data, _, error in
+        URLSession.shared.dataTask(with: Link.factUrl.url) {  data, _, error in
             guard let data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
@@ -35,6 +49,17 @@ extension ViewController {
                 print(error.localizedDescription)
             }
             
+        }.resume()
+    }
+    private func fetchImage() {
+        URLSession.shared.dataTask(with: Link.pictureUrl.url) { data, response, error in
+            guard let data else {
+                print(error?.localizedDescription ?? "No errpr description")
+                return
+            }
+            DispatchQueue.main.async {
+                self.imageCat.image = UIImage(data: data)
+            }
         }.resume()
     }
 }
